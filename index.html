@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raquel Agcaoili -  Virtual Assistant | IT Graduate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,7 +23,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Playfair Display', serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-light);
@@ -43,14 +44,30 @@
             border-bottom: 1px solid var(--border-color);
         }
 
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+        }
+
         .header-content h1 {
             font-size: 3rem;
             margin-bottom: 16px;
-            font-weight: 300;
+            font-weight: 700;
             letter-spacing: -0.02em;
         }
 
         .header-content .title {
+            font-family: 'Inter', sans-serif;
             font-size: 1.25rem;
             color: var(--text-light);
             margin-bottom: 32px;
@@ -105,6 +122,7 @@
         }
 
         nav a {
+            font-family: 'Inter', sans-serif;
             color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
@@ -137,6 +155,7 @@
         }
 
         .summary {
+            font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-dark);
@@ -362,6 +381,7 @@
     <header>
         <div class="container">
             <div class="header-content">
+                <img src="profile.jpg" alt="Raquel Agcaoili" class="profile-img">
                 <h1>Raquel Agcaoili</h1>
                 <div class="title"> Virtual Assistant | IT Graduate</div>
                 <div class="contact-info">
