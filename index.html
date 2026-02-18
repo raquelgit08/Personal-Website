@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raquel Agcaoili - Junior Project Coordinator | Virtual Assistant | IT Graduate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #3b82f6;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-content .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
+            background: var(--bg-white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            background: var(--bg-white);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-category li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--bg-white);
+        }
+
+        .timeline-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .description {
+            line-height: 1.6;
+        }
+
+        .why-good-candidate {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid var(--accent-color);
+        }
+
+        .candidate-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .candidate-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .candidate-point .checkmark {
+            color: #10b981;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 60px 40px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .candidate-points {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Raquel Agcaoili</h1>
+                <div class="title">Junior Project Coordinator | Virtual Assistant | IT Graduate</div>
+                <div class="contact-info">
+                    <a href="mailto:raquel.agcaoili@example.com">📧 raquel.agcaoili@example.com</a>
+                    <a href="tel:+639123456789">📱 +63 912 345 6789</a>
+                    <a href="https://linkedin.com/in/raquel-agcaoili" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/raquelagcaoili" target="_blank">💻 GitHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#why-me">Why Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="summary">
+                    <p>Hi, my name is Raquel, and I'm an Information Technology graduate from the Philippines. I recently graduated in July, and after completing my internship with a company, I was hired as a Junior Software Developer.</p>
+                    <br>
+                    <p>In my role, my responsibilities are not limited to coding. I also assist in documenting system processes, organizing project requirements, and monitoring task progress within our team to ensure we meet deadlines. These experiences helped me develop strong organizational, communication, and coordination skills.</p>
+                    <br>
+                    <p>I am applying for the Junior Project Manager position because I enjoy supporting teams, managing workflows, and helping projects move forward efficiently. I am highly detail-oriented, proactive, and comfortable working with structured processes and documentation.</p>
+                    <br>
+                    <p>I am also eager to learn tools such as ClickUp and expand my knowledge in project management methodologies while contributing value to your organization.</p>
+                    <br>
+                    <p>I believe my technical background, combined with my organizational skills and willingness to learn, would allow me to support your team effectively.</p>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>🎯 Project Coordination</h3>
+                        <ul>
+                            <li>Task Management</li>
+                            <li>Workflow Organization</li>
+                            <li>Deadline Monitoring</li>
+                            <li>Team Coordination</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📋 Documentation & Reporting</h3>
+                        <ul>
+                            <li>System Documentation</li>
+                            <li>Process Documentation</li>
+                            <li>Progress Reporting</li>
+                            <li>Requirements Gathering</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🛠️ Technical Tools</h3>
+                        <ul>
+                            <li>Google Workspace</li>
+                            <li>Microsoft Office</li>
+                            <li>Trello</li>
+                            <li>Notion</li>
+                            <li>ClickUp (Learning)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>💪 Soft Skills</h3>
+                        <ul>
+                            <li>Communication</li>
+                            <li>Time Management</li>
+                            <li>Process Organization</li>
+                            <li>Problem Solving</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <h3>Junior Software Developer</h3>
+                        <div class="date">July 2024 - Present</div>
+                        <div class="description">
+                            <p>• Assist in documenting system processes and technical specifications</p>
+                            <p>• Organize project requirements and maintain project documentation</p>
+                            <p>• Monitor task progress within the development team</p>
+                            <p>• Ensure timely completion of project deliverables</p>
+                            <p>• Collaborate with team members to meet project deadlines</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>IT Intern</h3>
+                        <div class="date">January 2024 - June 2024</div>
+                        <div class="description">
+                            <p>• Supported development team in various projects</p>
+                            <p>• Gained hands-on experience in software development lifecycle</p>
+                            <p>• Assisted in testing and quality assurance processes</p>
+                            <p>• Contributed to technical documentation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="why-me" class="why-good-candidate">
+                <h2>⭐ Why I'm a Good Candidate</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">I bring a unique combination of technical knowledge and organizational skills that make me an ideal candidate for project coordination roles:</p>
+                <div class="candidate-points">
+                    <div class="candidate-point">
+                        <span class="checkmark">✔</span>
+                        <span><strong>Tech Knowledge</strong> - Big advantage in understanding technical projects</span>
+                    </div>
+                    <div class="candidate-point">
+                        <span class="checkmark">✔</span>
+                        <span><strong>Team Experience</strong> - Proven ability to work collaboratively</span>
+                    </div>
+                    <div class="candidate-point">
+                        <span class="checkmark">✔</span>
+                        <span><strong>Documentation Skills</strong> - Experience in technical and process documentation</span>
+                    </div>
+                    <div class="candidate-point">
+                        <span class="checkmark">✔</span>
+                        <span><strong>Real Company Exposure</strong> - Professional experience in a corporate environment</span>
+                    </div>
+                    <div class="candidate-point">
+                        <span class="checkmark">✔</span>
+                        <span><strong>Fresh Graduate Energy</strong> - Enthusiastic and eager to learn</span>
+                    </div>
+                    <div class="candidate-point">
+                        <span class="checkmark">✔</span>
+                        <span><strong>Trainable Mindset</strong> - Quick learner and adaptable to new processes</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Work Together</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Thank you for your time, and I look forward to the opportunity to work with you.</p>
+            <a href="mailto:raquel.agcaoili@example.com" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Raquel Agcaoili. All rights reserved.</p>
+                <p>Junior Project Coordinator | Virtual Assistant | IT Graduate</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
