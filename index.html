@@ -15,19 +15,23 @@
         :root {
             --primary-color: #1a1a1a;
             --accent-color: #6366f1;
+            --secondary-color: #ec4899;
             --text-dark: #1a1a1a;
             --text-light: #6b7280;
             --bg-light: #fafafa;
             --bg-white: #ffffff;
             --border-color: #e5e7eb;
+            --gradient-start: #6366f1;
+            --gradient-end: #ec4899;
         }
 
         body {
             font-family: 'Playfair Display', serif;
             line-height: 1.6;
             color: var(--text-dark);
-            background-color: var(--bg-light);
+            background: linear-gradient(135deg, #fafafa 0%, #f5f3ff 100%);
             font-weight: 400;
+            min-height: 100vh;
         }
 
         .container {
@@ -42,6 +46,19 @@
             padding: 80px 0;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            z-index: 0;
         }
 
         .header-content {
@@ -49,6 +66,8 @@
             flex-direction: column;
             align-items: center;
             gap: 24px;
+            position: relative;
+            z-index: 1;
         }
 
         .profile-img {
@@ -56,7 +75,14 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--border-color);
+            border: 4px solid var(--gradient-start);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.4);
         }
 
         .header-content h1 {
@@ -64,6 +90,10 @@
             margin-bottom: 16px;
             font-weight: 700;
             letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header-content .title {
@@ -152,6 +182,19 @@
             font-size: 2rem;
             font-weight: 300;
             letter-spacing: -0.02em;
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
         }
 
         .summary {
@@ -232,7 +275,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             border: 2px solid var(--bg-white);
         }
 
@@ -315,7 +358,7 @@
 
         .cta-button {
             display: inline-block;
-            background: var(--text-dark);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: var(--bg-white);
             padding: 16px 32px;
             text-decoration: none;
@@ -324,6 +367,7 @@
             margin-top: 24px;
             transition: all 0.3s ease;
             font-size: 1rem;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
         }
 
         .cta-button:hover {
@@ -381,7 +425,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <img src="profile.jpg" alt="Raquel Agcaoili" class="profile-img">
+                <img src="https://picsum.photos/seed/raquel/150/150.jpg" alt="Raquel Agcaoili" class="profile-img">
                 <h1>Raquel Agcaoili</h1>
                 <div class="title"> Virtual Assistant | IT Graduate</div>
                 <div class="contact-info">
