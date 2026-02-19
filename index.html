@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raquel Agcaoili -  Virtual Assistant | IT Graduate</title>
+    <title>Raquel Agcaoili - Virtual Assistant | IT Graduate</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -132,7 +132,7 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 48px;
+            gap: 32px;
             flex-wrap: wrap;
         }
 
@@ -327,6 +327,169 @@
             font-weight: 600;
         }
 
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 32px 24px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .achievement-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .achievement-description {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .service-category {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+        }
+
+        .service-category h3 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-category ul {
+            list-style: none;
+        }
+
+        .service-category li {
+            padding: 8px 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-category li:last-child {
+            border-bottom: none;
+        }
+
+        .service-category li::before {
+            content: '→';
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .portfolio-item {
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .portfolio-content {
+            padding: 24px;
+        }
+
+        .portfolio-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-description {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .portfolio-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            gap: 8px;
+        }
+
         .cta-section {
             text-align: center;
             background: var(--bg-white);
@@ -387,7 +550,10 @@
                 margin-bottom: 32px;
             }
 
-            .skills-grid {
+            .skills-grid,
+            .achievements-grid,
+            .services-grid,
+            .portfolio-grid {
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
@@ -411,11 +577,11 @@
         <div class="container">
             <div class="header-content">
                 <h1>Raquel Agcaoili</h1>
-                <div class="title"> Virtual Assistant | IT Graduate</div>
+                <div class="title">Virtual Assistant | IT Graduate</div>
                 <div class="contact-info">
-                    <a href="mailto:raquel.agcaoili@example.com">📧 raquelagcaoili2gmail.com</a>
-                    <a href="tel:+639123456789">📱 +63 956 772 1465</a>
-                    <a href="www.linkedin.com/in/raquel-agcaoili-a7216b34b" target="_blank">💼LinkedIn</a>
+                    <a href="mailto:raquelagcaoili2@gmail.com">📧 raquelagcaoili2@gmail.com</a>
+                    <a href="tel:+639567721465">📱 +63 956 772 1465</a>
+                    <a href="https://www.linkedin.com/in/raquel-agcaoili-a7216b34b" target="_blank">💼 LinkedIn</a>
                     <a href="https://github.com/raquelgit08" target="_blank">💻 raquelgit08</a>
                 </div>
             </div>
@@ -426,8 +592,11 @@
         <div class="container">
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#why-me">Why Me</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -439,15 +608,72 @@
             <section id="about">
                 <h2>About Me</h2>
                 <div class="summary">
-                    <p>Hi, my name is Raquel, and I'm an Information Technology graduate from the Philippines. I recently graduated in July, and after completing my internship with a company, I was hired as a Junior Software Developer.</p>
+                    <p>Hi, I'm Raquel, an Information Technology graduate with Latin Honors and a Junior Software Developer currently working in a professional team environment. After completing my internship, I was hired by the company, where I gained hands-on experience not only in development but also in documentation, task coordination, and workflow organization.</p>
                     <br>
-                    <p>In my role, my responsibilities are not limited to coding. I also assist in documenting system processes, organizing project requirements, and monitoring task progress within our team to ensure we meet deadlines. These experiences helped me develop strong organizational, communication, and coordination skills.</p>
+                    <p>I specialize in supporting teams by organizing processes, maintaining accurate documentation, monitoring project progress, and ensuring deadlines are met. My technical background allows me to understand systems quickly, communicate effectively with teams, and adapt to new tools and workflows with ease.</p>
                     <br>
-                    <p>I am applying for this postion because I enjoy supporting teams, managing workflows, and helping projects move forward efficiently. I am highly detail-oriented, proactive, and comfortable working with structured processes and documentation.</p>
+                    <p>During my academic years, I also served as the President of the Junior Philippine Computer Society, where I led initiatives, coordinated members, and managed projects — strengthening my leadership, communication, and organizational skills.</p>
                     <br>
-                    <p>I am also eager to learn tools and expand my knowledge in project management methodologies while contributing value to your organization.</p>
-                    <br>
-                    <p>I believe my technical background, combined with my organizational skills and willingness to learn, would allow me to support your team effectively.</p>
+                    <p>I am highly detail-oriented, reliable, and proactive, with a strong commitment to delivering quality work. My goal is to help businesses operate efficiently by providing structured support, clear communication, and dependable assistance.</p>
+                </div>
+            </section>
+
+            <section id="achievements">
+                <h2>Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <span class="achievement-icon">🎓</span>
+                        <div class="achievement-title">Graduated with Latin Honors</div>
+                        <div class="achievement-description">BS Information Technology, 2025</div>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-icon">🏆</span>
+                        <div class="achievement-title">Consistent Honor Student</div>
+                        <div class="achievement-description">Throughout academic journey</div>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-icon">👩‍💻</span>
+                        <div class="achievement-title">Hired as Junior Developer</div>
+                        <div class="achievement-description">After successful internship</div>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-icon">👩‍💼</span>
+                        <div class="achievement-title">JPCS President</div>
+                        <div class="achievement-description">Junior Philippine Computer Society</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services">
+                <h2>How I Can Help</h2>
+                <div class="services-grid">
+                    <div class="service-category">
+                        <h3>📋 Administrative Support</h3>
+                        <ul>
+                            <li>Email & Calendar Management</li>
+                            <li>Documentation & SOP Creation</li>
+                            <li>Data Entry & Research</li>
+                            <li>File Organization</li>
+                        </ul>
+                    </div>
+                    <div class="service-category">
+                        <h3>🎯 Project Coordination</h3>
+                        <ul>
+                            <li>Task & Workflow Organization</li>
+                            <li>Progress Monitoring</li>
+                            <li>Team Communication</li>
+                            <li>Deadline Management</li>
+                        </ul>
+                    </div>
+                    <div class="service-category">
+                        <h3>🛠️ Technical Support</h3>
+                        <ul>
+                            <li>System Documentation</li>
+                            <li>Basic Troubleshooting</li>
+                            <li>Tool Setup & Training</li>
+                            <li>Process Optimization</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -478,7 +704,7 @@
                             <li>Google Workspace</li>
                             <li>Microsoft Office</li>
                             <li>Canva</li>
-                            <li>Click up (learning)</li>
+                            <li>ClickUp (learning)</li>
                         </ul>
                     </div>
                     <div class="skill-category">
@@ -515,6 +741,36 @@
                             <p>• Gained hands-on experience in software development lifecycle</p>
                             <p>• Assisted in testing and quality assurance processes</p>
                             <p>• Contributed to technical documentation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">📄</div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-title">Technical Documentation</div>
+                            <div class="portfolio-description">Sample system documentation and process guides created for development projects.</div>
+                            <a href="#" class="portfolio-link">View Sample →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">🎨</div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-title">Design Projects</div>
+                            <div class="portfolio-description">Canva designs and visual content created for various organizational needs.</div>
+                            <a href="#" class="portfolio-link">View Designs →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">📊</div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-title">Task Management</div>
+                            <div class="portfolio-description">Sample task trackers and project coordination tools used in team management.</div>
+                            <a href="#" class="portfolio-link">View Examples →</a>
                         </div>
                     </div>
                 </div>
@@ -557,7 +813,7 @@
         <div class="container">
             <h2>Ready to Work Together</h2>
             <p style="font-size: 1.2rem; margin-bottom: 20px;">Thank you for your time, and I look forward to the opportunity to work with you.</p>
-            <a href="mailto:raquel.agcaoili@example.com" class="cta-button">Get In Touch</a>
+            <a href="mailto:raquelagcaoili2@gmail.com" class="cta-button">Get In Touch</a>
         </div>
     </section>
 
@@ -565,7 +821,7 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2024 Raquel Agcaoili. All rights reserved.</p>
-                <p> Virtual Assistant | IT Graduate</p>
+                <p>Virtual Assistant | IT Graduate</p>
             </div>
         </div>
     </footer>
